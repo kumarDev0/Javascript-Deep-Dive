@@ -45,6 +45,45 @@ now , Everything is all right but after 1 Years (2009) one software engineer to 
 IT all the Intresting History .
 ============================================================
 
-     
+Hey, Dude Programming is start in javascript
+================================================================
+let's understand let,const varibles 
+======================
+using let variable -> a let varible is a dynamic in the sence change the original value assign into new value again and again.
+
+examole:(1) (Let Variable)
+let x = 20
+console.log(x) - > output is (20)
+now, x = 50 // again assign 
+consolo.log(x) -> now the original value is changed output is (50)
+now, x = 70 // again assign -> output (70)
+rule remember let variable can changed. any where 
+
+example:(2) (Const Variable)
+const x = 20
+cosnole.log(x) // ouput is 20 perfect
+but,
+we are assigning again 
+x = 30
+console.log(x) // Error (Can not Assign to Const Variable)
+ruel remember : Const variable can not change (Only for primitive datatype) , (for non-primitive you can change)
+
+What will Happend in memory :-
+in javascript there are two type of memory (Stack Area) (Heap Area)
+
+visualize the memory in case of (Let Variable)
+
+==============
+| Stack Area |   All primitive value store in stack area link (let x = 20) take address @764388 like this if you assign again to the x then change the value only address will be same , same as the const case but not Assign Again
+==============
+
+=============
+| Heap Area  |  isko hum aage dekhenge 
+=============
+
+// const and let variable concept is end here................
+
+
+
 
 
