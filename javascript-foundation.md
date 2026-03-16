@@ -102,8 +102,42 @@ let x   // (javascript consider as undefined)
 if you want check the which type of value and variables --> (typeOf(variabl-name)) it is return the type
 
 (x , age, name, isTrue,   ) it is just a variable address in memory of  javascript
+---------------------------
+note. "Javascript does not allocate memory by itself"
+- Memory Allocated by the operating System , and javascript use the allocated memory and manage it .
+- The Reality is more deeper (Etna dimag me rakhana)
 
 ===================================================================================== End ....
+@ (Dialog Box in javascript )
+=================================
+there are three type :
+1.Alert()
+2.Confirm()
+3.Prompt()
+therse are browser Dialoge Function it is used to intract the user to take some inputs and display some messages
+
+alert()--- it is used to display the message 
+``` javascript
+const displayMessage = alert('Welcome to the profile page') // like this
+```
+Confirrm() --- it is used for desition yes/no and return the boolean value
+```javascript
+const isConfirm = confirm('Are you sure to terminate your programs') // user click (yes) - true / (no) false
+if (isConfirm){
+console.log('Program is terminated successfully')
+}
+```
+prompt() --- it is used to take some input from user 
+``` javascript
+const userName = prompt('Enter your user name')
+const userPassword = prompt('Enter a password')
+console.log(userName , userPassword)
+```
+note:. iska use isse bhi jada hai isme condition bhi laga skte hai isko kahi bhi use kar skte hai
+avi ke liye etna hi jaise jaise hum aage jaenge iska use aapko dekhne ko milega .
+
+======================================= End............
+
 
 
 
