@@ -138,6 +138,99 @@ avi ke liye etna hi jaise jaise hum aage jaenge iska use aapko dekhne ko milega 
 
 ======================================= End............
 
+------------------------------------------------
+@ Template Literals | String Methods and Property
+---------------------------------------------------
+template literas : it is modern way of javascript to write an string is called templete literals 
+- insert the variable and expression directly into the string
+- it is used to make a dynamic and readable that's it
+- template literals use by backtik (``)
+- systex ${} -> in the curly blackets we insert variable and expression
+- ${} enven you can many thing pass into the bracket
+--------------${}---------------
+           - Variables
+           - math calculation
+           - function call
+           - boolean Expression
+           - object Property
+           - Ternary operator
+  ------------------------------------
+
+better understanding with example : (Different different way )
+
+```javascript
+const firstName = 'kumar'
+cosnt lastName = 'Dev'
+const age = 25
+cosnole.log(`my first name is : ${firstName} `)
+console.log(`my last name is : ${lastName}`)
+console.log(`and , i am ${age} years old`)
+```
+...........................
+output = 
+my first name is kumar
+my last name is Dev
+and, i am 25 years old
+............................
+
+// second Example:
+
+```javascript
+const firstName = 'kumar'
+cosnt lastName = 'Dev'
+const age = 25
+const userMessage = `firstname : ${firstName} lastname : ${lastName}and , i am ${age} years old`
+console.log(userMessage)
+```
+........................................................
+Output = 
+firstname : Kumar lastname : Dev and, i am 25 years old.
+.........................................................
+
+// Third Example 
+
+``` javascript
+const x = 10
+const y = 20
+console.log(`The sum of a+b = ${x+y}`)
+```
+......................
+output = 
+the sum of a+b = 30
+......................
+
+// Old method in javascript (String)
+```javascript
+const name = 'Kuamr'
+const age = 25
+const address = 'Bihar'
+cosnt myDetails = 'My name is : ' + name + ' and, i am ' + age + ' years old. and i am belong to ' + address
+console.log(myDetails)
+```
+...................................................................
+output = 
+my name is : Kumar and, i am 25 years old and i an belong to bihar
+....................................................................
+
+note. (Remembar)
+now you can see the difference which one is best to use modern ya old method you can pick any one code is same and output is same but writing a code in old method time consuming and not readable  
+
+now you can explore the string Method 
+-toUppercase()
+-toLowercase()
+-trim()
+-trimEnd()
+-trimStart()
+-include()
+-slice()
+-splite()
+-lenght // it is propert not a method
+-replace()
+
+---------------------------------------------------- End 
+
+
+
 
 
 
