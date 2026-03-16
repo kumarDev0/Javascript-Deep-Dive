@@ -325,7 +325,208 @@ console.log(check7)
 const check8 = Boolean(-1.98765)
 console.log(check8)
 ```
-** Note . (Remember only Falsy value)
+** Note . (Remember only Falsy value) 
+===================================================End ==============
+
+---------------------
+@ Comparison Operator
+----------------------
+1. == (Equality)
+``` javascript
+// ? Program1
+const userAge1 = 30
+const userAge2 = 20
+console.log(userAge1 == userAge2)
+```
+```
+Output:
+False
+```
+```javascript
+// ? Program1 but Different way to check same things
+const userAge1 = 30
+const userAge2 = 20
+const check = userAge1 == userAge2
+// if the value is true then print if body and if the value is false print else body
+if (check) {
+    console.log('The Value is true')
+} else {
+    console.log('The value is False')
+}
+```
+```
+Output: The Value is False , why 30 and 20 are not equal then return Else body 
+
+```
+```javascript
+// ? Program1 but Different Way to check but slitly different because (!) i will use and obserb this
+// not operator means if value is true then becomes False , if value is False then Become true
+cosnt userAge1 = 30
+const userAge2 = 20
+const check = userAge1 == userAge2
+if(!check){
+   cosnole.log('The Value is True')
+}else{
+   console.log('The Value is False')
+}
+```
+```
+output
+True
+explanation: 30 and 20 are not equal but i saying 30 and 20 are equal using ! operator
+-> true becomes false and false becomes true.
+
+```
+```javascript
+// Important Obserb kro
+const userAge1 = '20'
+const userAge2 = 20
+console.log(userAg1 == userAge2)
+```
+```
+output : True
+Explain: Why true, userAge1 is consist a string ('20') and userAge2 consist a number (20) then how can to become true
+because , javascript engine when see the (==) then internally convert string into number then comapre isiliye ye tru result diya hai you can say (Implicit typecasting by javascript engine)
+
+```
+
+2. === (Strict equality)
+```javascript
+// ? Example 
+const userAge1 = '20'
+const userAge2 = 20
+console.log(userAge1 == userAge2)
+```
+```
+output: False
+Explain: Why output becomes false because the (===) is strict it say i want same value and same type ,
+here is userAge1 is String and userAge2 is number both value not same then return false javascript engine will not covert into string to number internally because you have to use (===) strict equality,
+from this program you want to return True then you convert manually string to int then retun true
+next program me hum isko dekhenge okay
+```
+
+```javascript
+// ? i have covert string to number using parseInt() and + oprator
+const userAge1 = '30'
+const userAge2 = 30
+const convert = parseInt(userAge1)
+const convert2 = +userAge1 === userAge2
+console.log(convert === userAge2)
+console.log(convert2 === userAge2)
+```
+```
+output : True
+Explain : Strictness is end because of using parseInt() method to convert a string into number
+```
+```javascript
+// ? same Program but different way
+const userAge1 = parseInt('30')
+cosnt userAge2 = 30
+console.log(userAge1 === userAge2)
+.....................................
+
+const userAge1 = +'30'
+cosnt userAge2 = 30
+console.log(userAge1 === userAge2)
+
+```
+3. != (not eqaul)
+let's understand propery how to use and what heppening
+
+```javascript
+// ? != always true value become false and false value becomes true , remember okay
+// ? Program 1
+cosnt userAge1 = 30
+const userAge2 = 30
+console.log(userAge1 != userAge2)
+```
+```
+output : False
+Expalanation : userAge1 and userAge2 are equal value in this case (==) it return true, but we are using (1=) iska ulta kaam karta hai isiliye return false
+```
+```javascript
+// ? Program 2
+cosnt userAge1 = '30'
+cosnt userAge2 = 30
+cosnole.log(userAge1 != userAge2)
+
+```
+```
+ouput : False
+Expalanation : userAge1 is a string but internally javascript engine convert into number then check (!=) return False
+```
+```javascript
+// ? Program 3
+const userAge1 = 20
+const userAge2 = 25
+cosnole.log(userAge1 != userAge2)
+```
+```
+output : True
+Explanation : think you are checking (==) then what will be result, the result is False then smae logic apply
+(!=) operator what will do , true becomes false and false becomes true , the result was false in case of (==) then it will becomes True oaky
+
+```
+```javascript
+// program4
+const userAge1 = '30'
+const userAge2 = 20
+console.log(userAge1 != userAge2)
+
+```
+```
+ouput : True
+Explation : Ye tumhara task hai socho .
+
+```
+4. !== (Stict not equality)
+
+```javascript
+// ? Program 1 you can obserb carefully (simple rule -  (===) iske ulta kaam krega ye (!==) )
+cosnt userAge1 = 20
+const userAge2 =  20
+console.log(userAge1 !== userAge2)
+```
+```
+output : False
+Explanation : (===) from this case return true then we are using (!== ) it becomes trur into false and false into true
+```
+```javascript
+// Program 2
+const userAge1 = 20
+const userAge2 = '20'
+console.log(userAge1 !== userAge2)
+```
+```
+output: True
+Explanation : think if you use (===) then what will be return False yes , then we are using !== the what will be return True 
+```
+
+```javascript
+// ? Program3
+const userAge1 = 30
+const userAge2 = 20
+console.log(userAge1 !== userAge2)
+```
+```
+output : True
+Explanation : Khud se try kro
+
+```
+```
+Assignment :
+- you can try to write a code with parseInt() and + operator
+- you can try with truthy and Falsy value it will also work in assignment operator
+- you can try < , > , <= , >= it is very easy
+- you can try < , > , <= , >= with Falsy and Truthy Value okay
+
+```
+
+====================================================== End ....
+
+
+
+
 
 
 
