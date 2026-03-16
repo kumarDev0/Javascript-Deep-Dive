@@ -250,7 +250,84 @@ now you can explore the string Method
 -lenght // it is propert not a method
 -replace()
 
----------------------------------------------------- End 
+================================================================ End =================
+
+-------------------------------------
+@ Truthy and Falsy value in javascript
+-------------------------------------
+truthy and falsy value huge use in javascript it is used anywhere 
+
+``` javascript
+// check Falsy value
+
+// falsy values remember
+//case 1
+const checkTruthyAndFalsyValue = Boolean(0)
+console.log(checkTruthyAndFalsyValue)
+
+//case2
+const checkTruthyAndFalsyValue2 = Boolean(2 - 2)
+console.log(checkTruthyAndFalsyValue2)
+
+//case3
+const checkTruthyAndFalsyValue3 = Boolean(NaN)
+console.log(checkTruthyAndFalsyValue3)
+
+//case4 return falsy value with empty string
+const checkTruthyAndFalsyValue4 = Boolean('')
+console.log(checkTruthyAndFalsyValue4)
+
+// different case return truthy value with space
+const checkDifferent = Boolean(' ')
+console.log(checkDifferent)
+
+// case5 
+const checkTruthyAndFalsyValue5 = Boolean(null)
+console.log(checkTruthyAndFalsyValue5)
+
+// case 6
+const checkTruthyAndFalsyValue6 = Boolean(undefined)
+console.log(checkTruthyAndFalsyValue6)
+```
+
+//check Truthy value 
+
+```javascript
+//case 1
+const check1 = Boolean(4)
+console.log(check1)
+
+// case 2
+const check2 = Boolean('Elon musk')
+console.log(check2)
+
+// case3 
+const check3 = Boolean(5 + 7 - 12) // 5+7 = 12-12 = 0 return Falsy
+console.log(check3)
+
+// case4
+const check4 = Boolean(Infinity)
+console.log(check4)
+
+// case5
+const check5 = Boolean(-Infinity)
+console.log(check5)
+
+// case6 
+const check6 = Boolean(-3)
+console.log(check6)
+
+//case7
+const check7 = Boolean(3.747858878)
+console.log(check7)
+
+//case8
+const check8 = Boolean(-1.98765)
+console.log(check8)
+```
+** Note . (Remember only Falsy value)
+
+
 
 
 
