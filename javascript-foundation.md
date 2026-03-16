@@ -339,8 +339,7 @@ const userAge2 = 20
 console.log(userAge1 == userAge2)
 ```
 ```
-Output:
-False
+Output: False
 ```
 ```javascript
 // ? Program1 but Different way to check same things
@@ -355,33 +354,33 @@ if (check) {
 }
 ```
 ```
-Output: The Value is False , why 30 and 20 are not equal then return Else body 
+Output: The Value is False
+, why 30 and 20 are not equal then return Else body 
 
 ```
 ```javascript
-// ? Program1 but Different Way to check but slitly different because (!) i will use and obserb this
+// ? Program1 but Different Way to check but slitly different because (!) i will use and observe this
 // not operator means if value is true then becomes False , if value is False then Become true
 cosnt userAge1 = 30
 const userAge2 = 20
 const check = userAge1 == userAge2
 if(!check){
-   cosnole.log('The Value is True')
+   console.log('The Value is True')
 }else{
    console.log('The Value is False')
 }
 ```
 ```
-output
-True
-explanation: 30 and 20 are not equal but i saying 30 and 20 are equal using ! operator
--> true becomes false and false becomes true.
+output : True
+Explanation : 30 and 20 are not equal but i saying 30 and 20 are equal using ! operator
+true becomes false and false becomes true.
 
 ```
 ```javascript
-// Important Obserb kro
+// Important Observe kro
 const userAge1 = '20'
 const userAge2 = 20
-console.log(userAg1 == userAge2)
+console.log(userAge1 == userAge2)
 ```
 ```
 output : True
@@ -421,12 +420,12 @@ Explain : Strictness is end because of using parseInt() method to convert a stri
 ```javascript
 // ? same Program but different way
 const userAge1 = parseInt('30')
-cosnt userAge2 = 30
+const userAge2 = 30
 console.log(userAge1 === userAge2)
 .....................................
 
 const userAge1 = +'30'
-cosnt userAge2 = 30
+const userAge2 = 30
 console.log(userAge1 === userAge2)
 
 ```
@@ -436,7 +435,7 @@ let's understand propery how to use and what heppening
 ```javascript
 // ? != always true value become false and false value becomes true , remember okay
 // ? Program 1
-cosnt userAge1 = 30
+const userAge1 = 30
 const userAge2 = 30
 console.log(userAge1 != userAge2)
 ```
@@ -446,9 +445,9 @@ Expalanation : userAge1 and userAge2 are equal value in this case (==) it return
 ```
 ```javascript
 // ? Program 2
-cosnt userAge1 = '30'
-cosnt userAge2 = 30
-cosnole.log(userAge1 != userAge2)
+const userAge1 = '30'
+const userAge2 = 30
+console.log(userAge1 != userAge2)
 
 ```
 ```
@@ -459,7 +458,7 @@ Expalanation : userAge1 is a string but internally javascript engine convert int
 // ? Program 3
 const userAge1 = 20
 const userAge2 = 25
-cosnole.log(userAge1 != userAge2)
+console.log(userAge1 != userAge2)
 ```
 ```
 output : True
@@ -483,7 +482,7 @@ Explation : Ye tumhara task hai socho .
 
 ```javascript
 // ? Program 1 you can obserb carefully (simple rule -  (===) iske ulta kaam krega ye (!==) )
-cosnt userAge1 = 20
+const userAge1 = 20
 const userAge2 =  20
 console.log(userAge1 !== userAge2)
 ```
@@ -499,7 +498,7 @@ console.log(userAge1 !== userAge2)
 ```
 ```
 output: True
-Explanation : think if you use (===) then what will be return False yes , then we are using !== the what will be return True 
+Explanation : think if you using (===) then what will be return False yes , then we are using !== the what will be return True 
 ```
 
 ```javascript
