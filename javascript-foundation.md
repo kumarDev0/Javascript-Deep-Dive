@@ -84,6 +84,27 @@ visualize the memory in case of (Let Variable)
 // const and let variable concept is end here................
 
 
+@ Primitive DataType in javascript Start here..........
+theory : 
+primitive data type is just a standard name behind the scene variable memory address
+
+/ ***now perform a Practicle to understand primitive data types ***/
+``` javascript
+let x = 10 // (javascript v8 engine see 10 is a number then it will consider as a -> number datatype)
+let age = 20 // (same it is number datatype)
+let name = 'KumarDev' // (now, javascript v8 engine see 'KumarDev' , v8 engine it will consider as String datatype)
+let isTrue = false // (javascript v8 engine it will consider as boolean type )
+let piValue = 3.1415 // (javascript v8 engine it will consider as number)
+let x ''  // (It is empty string , javascript v8 engin it will conside as string)
+let x   // (javascript consider as undefined)
+```
+
+if you want check the which type of value and variables --> (typeOf(variabl-name)) it is return the type
+
+(x , age, name, isTrue,   ) it is just a variable address in memory of  javascript
+
+===================================================================================== End ....
+
 
 
 
