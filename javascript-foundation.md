@@ -43,23 +43,26 @@ that is the resone chrome is more popular Browser.
 now , Everything is all right but after 1 Years (2009) one software engineer to take a javascript V8 Engin and put the engine into different software that is born a (Node.JS) and same javascript runnig on the server side out from the browser as a act of node.js that person is 'Ryan Dohl' 
 
 IT all the Intresting History .
-============================================================
+----------------------------------
 
+----------------------------------------------
 Hey, Dude Programming is start in javascript
-================================================================
+-----------------------------------------------
 let's understand let,const varibles 
-======================
+-----------------------------------
 using let variable -> a let varible is a dynamic in the sence change the original value assign into new value again and again.
 
 examole:(1) (Let Variable)
+```javascript
 let x = 20
-console.log(x) - > output is (20)
+console.log(x) //-> output is (20)
 now, x = 50 // again assign 
-consolo.log(x) -> now the original value is changed output is (50)
+consolo.log(x)// -> now the original value is changed output is (50)
 now, x = 70 // again assign -> output (70)
 rule remember let variable can changed. any where 
-
+```
 example:(2) (Const Variable)
+```javascript
 const x = 20
 cosnole.log(x) // ouput is 20 perfect
 but,
@@ -67,24 +70,26 @@ we are assigning again
 x = 30
 console.log(x) // Error (Can not Assign to Const Variable)
 ruel remember : Const variable can not change (Only for primitive datatype) , (for non-primitive you can change)
-
+```
+..................................................................
 What will Happend in memory :-
 in javascript there are two type of memory (Stack Area) (Heap Area)
-
+....................................................................
 visualize the memory in case of (Let Variable)
 
-==============
-| Stack Area |   All primitive value store in stack area link (let x = 20) take address @764388 like this if you assign again to the x then change the value only address will be same , same as the const case but not Assign Again
-==============
+```
+---------------  -------------
+| Stack Area |   | Heap Area |
+---------------  -------------
+```
+** important **
+All primitive value store in stack area link (let x = 20) take address @764388 like this if you assign again to the x then change the value only address will be same , same as the const case but not Assign Agai
 
-=============
-| Heap Area  |  isko hum aage dekhenge 
-=============
+===================================================================== End
 
-// const and let variable concept is end here................
-
-
-@ Primitive DataType in javascript Start here..........
+---------------------------------------------
+@ Primitive DataType in javascript Start here.
+----------------------------------------------
 theory : 
 primitive data type is just a standard name behind the scene variable memory address
 
@@ -107,9 +112,11 @@ note. "Javascript does not allocate memory by itself"
 - Memory Allocated by the operating System , and javascript use the allocated memory and manage it .
 - The Reality is more deeper (Etna dimag me rakhana)
 
-===================================================================================== End ....
+===================================================================================== End 
+
+------------------------------
 @ (Dialog Box in javascript )
-=================================
+-------------------------------
 there are three type :
 1.Alert()
 2.Confirm()
@@ -136,7 +143,7 @@ console.log(userName , userPassword)
 ** note:. **iska use isse bhi jada hai isme condition bhi laga skte hai isko kahi bhi use kar skte hai
 avi ke liye etna hi jaise jaise hum aage jaenge iska use aapko dekhne ko milega .
 
-======================================= End............
+======================================= End ======
 
 ------------------------------------------------
 @ Template Literals | String Methods and Property
@@ -148,15 +155,19 @@ template literas : it is modern way of javascript to write an string is called t
 - it is used to make a dynamic and readable that's it
 - template literals use by backtik (``)
 - systex ${} -> in the curly blackets we insert variable and expression
-- ${} enven you can many thing pass into the bracket
---------------${}---------------
+
+```
+- ${} even you can many thing pass into the bracket
+  
            - Variables
            - math calculation
            - function call
            - boolean Expression
            - object Property
            - Ternary operator
-  ------------------------------------
+
+```
+  
 *** 
 better understanding with example : (Different different way )
 
