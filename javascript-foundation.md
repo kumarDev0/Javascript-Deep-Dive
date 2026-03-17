@@ -727,6 +727,227 @@ Explain : Kud se try kro how to work
 ......................................
 ```
 
+Logical (||) OR 
+-------------------------
+```
+Defnation : or operator consider only truth value
+rule1 : First value Truthy then return it
+rule2 : first value Falsy then check second value, suppose second value is truthy then return it
+that means OR operator always return Truthy value it is a goal
+rule3 : if first and second value is falsy then return second falsy value
+
+remember this
+```
+Example : 
+``` javascript
+// Program 1
+const username = ''
+const password = 'vk@3456'
+const userResult = username || password
+console.log(userResult)
+```
+```
+...........................................................
+output : vk@3456
+explain : the value of username is Falsy, now
+or operator check second value is truthy then return it
+............................................................
+```
+```javascript
+//program 2
+const x = 10
+const y = 0
+const res = x || y
+console.log(res)
+```
+```
+.............
+output : 10
+.............
+```
+```javascript
+// Program 3
+const username = 'raaz modi'
+const userPassword = ''
+const userAge '25'
+const userResult = username || userpassword || + userAge
+console.log(userResult)
+
+```
+```
+.............................................
+output : raaz modi
+Expalin : you can try to think how it's work
+...............................................
+```
+```javascript
+// program 4
+const userName = ''
+const userPassword = ''
+const userFingerprint = 'x980023'
+if(userName && userPassword || userFingerprint){
+   console.log('you have login successfully')
+}else {
+    console.log('you re wrong please enter correct value')   
+}
+```
+```
+................................................................................................................
+output : you have login successfully
+Explaination : (userNAme && userPassword) -> return False, threat that one expression then || userFingerprint
+               observe left side expression is false or operator evaluate second expression is true then
+               enter into if body , print you have login successfully
+..................................................................................................................
+                
+```
+same example to break different different look to understand better
+```javascript
+// same program but manupulate and you can Observe it.
+const userName = 'villanraaz_x'
+const userPassword = ''
+const userFingerPrint = ''
+if(userName && userPassword || userFingerprint){
+    console.log('you have login successfully')
+}else {
+    console.log('you re wrong please enter correct value .')
+}
+
+```
+```
+..................................................................................................................
+output :  you're wrong please enter correct value
+
+Expalin : you notice && operator act like boolean value the rule is when both value is true then it evaluate if body
+        userpassword is missing and in the right side of or operator is assign empty the first expression value is false
+        then print else body
+....................................................................................................................
+```
+```javascript
+// same program
+const userName = 'Villanraaz_x'
+const userPassword = 'Vr@9087'
+const userFingerPrint = ''
+if(userName && userPassword || userFingerPrint){
+   console.log('You have Login successfully')
+}else {
+   console.log('you re wrong please enter correct value .')
+}
+```
+```
+..........................................
+output : you have login successfully.
+Expalanatio : ab iski jarurat tumhe nhi hai
+...........................................
+```
+let's see more example with truthy and falsy value using OR( || ) , AND( && )  
+
+```javascript
+// program 1
+const x = null
+const y = 0
+const y1 = NaN
+const z = 'Welcome'
+const z1 = undefined
+const result = x || y || y1 || (z && z1)
+const result2 = x || y || y1 || z && z1
+console.log(result)
+console.log(result2)
+```
+```
+.......................................................................
+output : (result) undefined
+output : (result2) ' '
+Explanation :  ye tumhara Assignment hai khud socho kaise aaya undefined
+..........................................................................
+```
+---------------
+(!) operator 
+---------------
+```
+rule : not oprator behave truthy value convert into Falsy and falsy value convert into truthy
+```
+```javascript
+// program usnig not (!)
+const name = 'villan'
+const age = 25
+const res = !name || age
+console.log(res)
+```
+```
+.............
+output : 25
+.............
+```
+
+```javascript
+// program 1
+const username = 'villain_x'
+const userpassword = 'Vr@3456'
+const userFingerprint = '#87hty08'
+
+if( !(username && userpassword) || userFingerprint){
+     console.log('You have login successfully')
+}else {
+  console.log('you are wrong please enter valid value')
+}
+
+// program 2
+const username = 'villain_x'
+const userpassword = ''
+const userFingerprint = ''
+if(username && !userpassword  || userFingerprint){
+    console.log('you have login successfully')
+}else {
+    console.log('you are wrong please enter correct value')
+}
+
+// program 3
+const username = ''
+const userpassword = ''
+const userFingerprint = ''
+if(username || userpassword || !userFingerprint){
+    console.log('you have login successfully')
+}else {
+    console.log('you are wrong please enter Valid value. ')
+}
+
+// program 4
+const userName = 'villain_x'
+const userPassword = 'Vk@786'
+const userFingerprint = ''
+if( !(userName && userPassword) || !userFingerprint){
+    console.log('you have login successfully')
+} else {
+    console.log('your are wrong please Enter Valid value.')
+}
+
+```
+```javascript
+// program 5
+const username = ''
+const userpassword = ''
+const userFingerprint = '889#jjd89'
+if(username && userpassword || !userFingerprint){
+    console.log('you have Login successfully')
+}else{
+    console.log('you are wrong please enter valid value.')
+}
+```
+```
+..................................................................
+Output : (program 1) -> you have login successfully
+Output : (program 2) -> you have login Successfully
+Output : (program 3) -> you have login successfully
+Output : (program 4) -> you have login successfully
+Output : (program 5) -> you are wrong please enter valid value.
+
+Explanation : tum khud se try karo tum behtar smjh jaoge
+Assignment : You can try with single truth value and falsy value
+......................................................................
+
+```
+======================================================================End(Logical Operator)
+
 
 
 
