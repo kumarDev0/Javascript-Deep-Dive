@@ -540,7 +540,6 @@ Rule 2 : if first Expression is Truthy then return second expression value
 realWorld use : if userLogin truthy return showDashboard,
 if userlogin is Falsy return nothing
 ...............................................................................................
-
 ```
 Example : (&& )
 ```javascript
@@ -549,36 +548,44 @@ const x = 10
 const y = 20
 const res = x && y
 console.log(res)
-..................
+```
+```
+......................................
 Output : 20
 Expalanation : 10 , 20 both are truthy
 as per the rule First exp truthy
 return second value
-............
+.......................................
 ```
 
 ```javascript
 //program 2
-cosnt x = ''
+const x = ''
 const y = null
 const res = x && y
 console.log(res)
+```
+```
 .......................
 Output : ''
 Explain : First is Falsy then return , it will not check second
 ................................................................
 ```
+
 ```javascript
 // program 3
 const userlogin = 'yes i have login'
 const showProfile = 'Here is your Profile'
 const userResult = userlogin && showProfile
 console.log(userResult)
+```
+```
 ........................................
 output : Here is Your Profile
 Explain : both are truthy return second
 IT is relworld example
 ........................................
+```
 
 ```javascript
 // Program 4
@@ -586,10 +593,13 @@ const x = 'Hello'
 const y = 2-2
 const res = x && y
 console.log(res)
+```
+```
 .....................
 Output : 0
 Exaplin : First Expression Truthy return second value
 .......................................................
+```
 
 ```javascript
 // program 5 thora tricky
@@ -597,32 +607,46 @@ const user1 = 'Welcome'
 const user2 = 'Hello'
 const res = user2 && user1
 console.log(res)
+```
+```
 ...........................
 Output : Welcome
 ...........................
+```
+```javascript
 const res2 = user1 && user2
 console.log(res)
+```
+```
 ...............
 output : Hello
 ...............
 Explanation : When you reverse the variable then change the return value
 .........................................................................
 ```
+
 ```javascript
 // program 6
 const x = 40
 const y = 90
 const res = x && y
 console.log(res)
+```
+```
 ..................
 output : 90
 ..................
+```
+```javascript
 const res2 = y && x
 console.log(res2)
+```
+```
 ............
 Output : 40
 ............
 ```
+
 ```javascript
 //program 7 tricky
 const x = 20
@@ -630,11 +654,14 @@ const y = 'Hello'
 const z = null
 const res = x && y && z
 console.log(res)
+```
+```
 .......................
 output : null
 Expalain : Kud se socho aisa kyu hua 
-......................
+.....................................
 ```
+
 ```javascript
 // program 8
 const username = 'KumarDev'
@@ -650,10 +677,13 @@ if (username && password) {
 console.log('username : ', usernameReturn)
 console.log('userPassword : ', passwordReturn)
 ```
+
 ```
+..........................................................
 output : username : empty
        : userpassword : 123@xy
 Explain : You can ask yourself why is this ouput is come
+............................................................
 ```
 
 ```javascript
@@ -662,18 +692,24 @@ const x = 10
 const y = 0
 const res = (x && y) <= 10
 console.log(res)
+```
+```
 ..............
 output : true
 ..............
-
+```
+```javascript
 const x = 10
 const y = 0
 const res = (x && y) <= -1
 console.log(res)
+```
+```
 .................
 output : False
 ..................
 ```
+
 ```javascript
 // last real world use enough to understand
 const username = 'KumarDev0'
