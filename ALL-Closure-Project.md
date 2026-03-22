@@ -260,6 +260,103 @@ const user1 = loanSystem('Raaz')
 user1.takeLoan(20, 22000, 40000)
 
 ```
+-------------------------------------------------------
+```
+Project - 3 Loan System Advance => (Optimize Version)
+
+```
+
+```javascript
+
+
+function loanSystem(name) {
+    console.log('Welcome to MkLoan ->', name);
+
+    let loanBalance = 0; // single source of truth
+    let history = [];
+
+    function takeLoan(age, salary, amount) {
+
+        if (age < 20 || age > 50) {
+            console.log('Not eligible (age)');
+            return;
+        }
+
+        // salary based eligibility
+        if (salary >= 80000) {
+            if (amount >= 500000 && amount <= 1000000) {
+                approveLoan(amount);
+            } else {
+                console.log('Invalid amount for high loan');
+            }
+        } 
+        else if (salary >= 40000) {
+            if (amount >= 100000 && amount <= 300000) {
+                approveLoan(amount);
+            } else {
+                console.log('Invalid amount for medium loan');
+            }
+        } 
+        else if (salary >= 20000) {
+            if (amount >= 30000 && amount <= 50000) {
+                approveLoan(amount);
+            } else {
+                console.log('Invalid amount for basic loan');
+            }
+        } 
+        else {
+            console.log('Not eligible (salary)');
+        }
+    }
+
+    function approveLoan(amount) {
+        loanBalance = amount;
+        console.log(`Loan Approved: ${amount} for ${name}`);
+        history.push(`Loan taken: ${amount}`);
+    }
+
+    function repayLoan(amount) {
+        if (loanBalance === 0) {
+            console.log('No active loan');
+            return;
+        }
+
+        loanBalance -= amount;
+
+        if (loanBalance < 0) {
+            loanBalance = 0;
+        }
+
+        console.log(`Repayed: ${amount}, Remaining: ${loanBalance}`);
+        history.push(`Repayed: ${amount}, Remaining: ${loanBalance}`);
+    }
+
+    function checkLoan() {
+        console.log('Current Loan:', loanBalance);
+    }
+
+    function getHistory() {
+        console.log('History:', history);
+    }
+
+    return {
+        takeLoan,
+        repayLoan,
+        checkLoan,
+        getHistory
+    };
+}
+
+// usage
+const user1 = loanSystem('Raaz');
+
+user1.takeLoan(25, 50000, 200000);
+user1.repayLoan(50000);
+user1.checkLoan();
+user1.getHistory();
+
+```
+
 
 
 
