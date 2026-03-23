@@ -357,6 +357,94 @@ user1.getHistory();
 
 ```
 
+```
+Project - 4 (ATM Limit System)
+System Design
+   * Features:
+     - Daily Withdraw Limits
+     - Daily Deposite Limits
+   * Logics:
+     - limit = 3
+     - if user try 3 time complet when user try 4 time then block
+```
+
+```javascript
+
+function atmLimitSystem(name) {
+    console.log('Welcome : ', name)
+    let userLimit = 0
+    let statusTrack = []
+    let balance = 10000
+
+    function deposite(amount) {
+        userLimit++
+
+        if (userLimit <= 3) {
+            balance += amount
+            console.log(`Deposite Sucessful : ${amount} for ${name}`)
+            statusTrack.push(`Deposite Success : ${amount} form ${name}`)
+
+        } else {
+            console.log('Your Deposite Limit is Cross : (3) ', name)
+            statusTrack.push(`Deposite - limit is Cross : ${name}`)
+        }
+
+
+    }
+    function withdraw(amount) {
+        userLimit++
+
+        if (userLimit <= 3) {
+            balance -= amount
+            console.log(`Withdraw Successful : ${amount} for ${name}`)
+            statusTrack.push(`Withdraw Success : ${amount} from ${name}`)
+
+        } else {
+            console.log('Your Withdraw Limit is Cross : (3) ', name)
+            statusTrack.push(`withdraw - limit is Cross : ${name}`)
+        }
+
+
+    }
+    function balanceEnquery() {
+        console.log('Current Balance : ', balance)
+        statusTrack.push(`Balance Track : ${balance} form : ${name}`)
+    }
+    function status() {
+        console.log('user History : ', statusTrack)
+    }
+
+    return {
+        deposite,
+        withdraw,
+        balanceEnquery,
+        status
+
+    };
+
+}
+
+const user1 = atmLimitSystem('Mausham')
+// * User Deposite Amount here
+// user1.deposite(3000)
+// user1.balanceEnquery()
+// user1.deposite(2000)
+// user1.balanceEnquery()
+// user1.deposite(4000)
+// user1.balanceEnquery()
+// user1.deposite(3000)    // your Deposite limit is cross
+
+// * userWithdraw Amount here
+
+user1.withdraw(1000)
+user1.withdraw(2000)
+user1.withdraw(3000)
+user1.withdraw(2000) // Your Withdraw limit is cross
+user1.status()
+
+
+```
+
 
 
 
