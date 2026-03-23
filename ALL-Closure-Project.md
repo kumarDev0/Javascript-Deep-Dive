@@ -445,6 +445,346 @@ user1.status()
 
 ```
 
+```
+Project - 5 Advance V2 Loan System - Not Scalable System
+ System Design (Mental Model)
+        user
+          |
+        multiple Loan
+          |
+        Each loan ->amount + Intrest + EMi + Status
+          |
+        Repayment System
+          |
+        Histrory Tracking
+-------------------------------------------
+```
+```javascript
+
+function loanSystem(name) {
+
+    console.log('Welcome : ', name)
+    let historyTracking = []
+    let emiStatus = []
+    let RepaymentEmi = []
+    let RepaymetDueEmi = []
+    let prLoan = 500000
+    let crloan = 3000000
+    let hmLoan = 10000000
+
+    // Emi Calculate privete (Personal Loan)
+    let anualRate_pr = 15
+    let month_pr = 24
+    let totalInterest_pr
+    let totalPay_pr
+    let Emi_pr
+    // Emi Calculator Privete (Car Laon)
+    let anualRate_cr = 24
+    let month_cr = 60
+    let totalIntrest_cr
+    let totalPay_cr
+    let Emi_cr
+
+    // EMi calculate Privete (Home loan)
+    let anualRate_hm = 30
+    let month_hm = 120
+    let totalIntrest_hm
+    let totalPay_hm
+    let Emi_hm
+
+    // User Eligiblity check function
+    function userEligibility(age, salary,amount) {
+        if (age >= 20 && age <= 50) {
+            console.log('You are Eligible : ', name)
+            historyTracking.push(`Loan Eligible : ${name}`)
+
+            if (salary >= 50000 && salary <= 100000) {
+                personalLoan(amount)
+
+            } else if (salary > 150000 && salary <= 200000) {
+                carLoan(amount)
+
+            } else if (salary > 300000 && salary <= 500000) {
+                homeLoan(amount)
+
+
+            } else {
+                console.log('Your Salry is Must Be (50000)')
+                historyTracking.push(`Not Eligible : ${name} because salary : ${salary}`)
+            }
+
+        } else {
+            console.log('You are Not eligible  (Age)')
+        }
+
+    }
+
+    // Take a Personal loan Function
+    function personalLoan(amount) {
+        console.log(`Personal Loan Approved : ${prLoan} Mr : ${name}`)
+
+        if (amount <= prLoan) {
+            prLoan = prLoan - amount
+            console.log(`Allocate Personal Laon Amount : ${amount} and Remaining Loan : ${prLoan}`)
+            historyTracking.push(`Allocate Personal Laon Amount  : ${amount} and Remaining Loan : ${prLoan} and Name : ${name} and user salry : ${salary}`)
+
+
+            console.log('Congratulation : ', name)
+            prLoanEmiCalculate(amount)
+
+
+        } else {
+            console.log('Please Enter Correct Amount')
+        }
+
+    }
+
+    // Take a Home Laon Function
+    function homeLoan(amount) {
+        console.log(`Home Laon Approved : ${hmLoan} Mr : ${name}`)
+        if (amount <= hmLoan) {
+            hmLoan = hmLoan - amount
+            console.log(`Allocate Home Loan Amount : ${amount} and Remainig Loan : ${hmLoan}`)
+            historyTracking.push(`Allocate Home Loan Amount  : ${amount} and Remaining Loan : ${hmLoan} and Name : ${name} and user salary : ${salary}`)
+
+            console.log('Congratualation : ', name)
+            homeLoanEMiCalculate(amount)
+
+
+        } else {
+            console.log('Please Enter Correct Amount ')
+        }
+
+    }
+
+    // Take a Car Laon function
+    function carLoan(amount) {
+        console.log(`Car loan Approved : ${crloan} mr : ${name}`)
+        if (amount <= crloan) {
+            crloan = crloan - amount
+            console.log(`Allocate Car Loan Amount  : ${amount} and Remainig Laon : ${crloan}`)
+            historyTracking.push(`Allocate Car Laon Amount : ${amount} and Remaining Loan : ${crloan} and Name : ${name} and user salary : ${salary}`)
+
+
+            console.log(`Congratualation : ${name}`)
+            carLaonEmiCalculate(amount)
+
+
+
+        } else {
+            console.log('Please Enter Valid Amount ')
+        }
+
+
+    }
+
+    //Personal loan EMI calculation function 
+    function prLoanEmiCalculate(amount) {
+
+        totalInterest_pr = (amount * anualRate_pr * 1) / 100;
+        totalPay_pr = amount + totalInterest_pr
+        Emi_pr = totalPay_pr / month_pr
+
+        console.log(
+
+
+            `
+            Loan Details : Mr ${name} 
+            Allocate Personal Loan Amount : ${amount}
+            Anual Rate : ${anualRate_pr} 
+            Duration : ${month_pr}
+            Total Intrest : ${totalInterest_pr}
+            Total Payable Amount : ${totalPay_pr}
+            Monthly EMi : ${Emi_pr}
+
+            `
+        );
+
+        emiStatus.push(`username : ${name} 
+            Allocate Personal Loan Amount : ${amount} ,
+            Anual Rate : ${anualRate_pr},
+            Duration : ${month_pr},
+            Total Intrest : ${totalInterest_pr} ,
+            Total Payable Amount : ${totalPay_pr},
+            Monthly Emi : ${Emi_pr}  `);
+
+    }
+
+    // Car Loan EMI Calculation Function
+    function carLaonEmiCalculate(amount) {
+
+        totalIntrest_cr = (amount * anualRate_cr * 1) / 100;
+        totalPay_cr = amount + totalIntrest_cr
+        Emi_cr = totalPay_cr / month_cr
+
+
+        console.log(`
+            Loan Details : Mr ${name} 
+            Allocate Car Loan Amount : ${amount}
+            Anual Rate : ${anualRate_cr} 
+            Duration : ${month_cr}
+            Total Intrest : ${totalIntrest_cr}
+            Total Payable Amount : ${totalPay_cr}
+            Monthly EMi : ${Emi_cr}`);
+
+        emiStatus.push(`username : ${name} 
+            Allocate Car Loan Amount: ${amount} ,
+            Anual Rate : ${anualRate_cr},
+            Duration : ${month_cr},
+            Total Intrest : ${totalIntrest_cr} ,
+            Total Payable Amount : ${totalPay_cr},
+            Monthly Emi : ${Emi_cr}  `);
+
+    }
+
+
+    // Home Loan EMI Calculation function
+    function homeLoanEMiCalculate(amount) {
+
+
+        totalIntrest_hm = (amount * anualRate_hm * 1) / 100;
+        totalPay_hm = amount + totalIntrest_hm
+        Emi_hm = totalPay_hm / month_hm
+
+
+        console.log(`
+            Loan Details : Mr ${name} 
+            Allocate Car Loan Amount : ${amount}
+            Anual Rate : ${anualRate_hm} 
+            Duration : ${month_hm}
+            Total Intrest : ${totalIntrest_hm}
+            Total Payable Amount : ${totalPay_hm}
+            Monthly EMi : ${Emi_hm}`);
+
+        emiStatus.push(`username : ${name} 
+            Allocate Car Loan Amount: ${amount} ,
+            Anual Rate : ${anualRate_hm},
+            Duration : ${month_hm},
+            Total Intrest : ${totalIntrest_hm} ,
+            Total Payable Amount : ${totalPay_hm},
+            Monthly Emi : ${Emi_hm}  `);
+
+
+
+
+    }
+
+    // Reypayment function 
+    function Repayment(repayAmount) {
+
+        var month = 0
+        if (repayAmount === Emi_pr && repayAmount++) {
+
+            console.log(`Thank You , EMI payment successfuly : ${repayAmount}`)
+            RepaymentEmi.push(`Username : ${name}
+                Duration : ${month_pr}
+                Monthly EMI : ${Emi_pr}
+                Current PayEMI : ${repayAmount}
+                Status :  ${month++} `)
+
+        } else {
+
+            if (!repayAmount === Emi_pr) {
+                RepaymetDueEmi.push(`
+                    username : ${name}
+                    EMI Pending : ${month++}`)
+            } else {
+                console.log('please Clear due loan emi  Amount ', Emi_pr)
+            }
+
+        }
+
+
+        if (repayAmount === Emi_cr && repayAmount++) {
+
+            console.log(`Thank you , EMI Payment Successfuly : ${repayAmount}`)
+            RepaymentEmi.push(`
+                UserName : ${name}
+                Duration : ${month_cr}
+                Monthly EMI : ${Emi_cr}
+                current PayEMI : ${repayAmount}
+                Status : ${month++}
+                `)
+        } else {
+
+            if (!repayAmount === Emi_cr) {
+                RepaymetDueEmi.push(`
+                    username : ${name}
+                    Pending EMI : ${month++}
+                    `)
+            } else {
+
+                console.log('Please Clear Due Loan Amount : ', Emi_cr)
+            }
+
+        }
+
+        if (repayAmount === Emi_hm && repayAmount++) {
+            console.log(`Thank you , EMI Payment Successfuly : ${repayAmount}`)
+            RepaymentEmi.push(`
+                UserName : ${name}
+                Duration : ${month_hm}
+                Monthly EMI : ${Emi_hm}
+                Current PayEMI : ${repayAmount}
+                status : ${month++}
+                `)
+        } else {
+
+            if (!repayAmount === Emi_hm) {
+                RepaymetDueEmi.push(`
+                    username : ${name}
+                    Pending EMi : ${month++}
+                    `)
+            } else {
+                console.log('Please clear Due EMI Amount : ', Emi_hm)
+            }
+        }
+
+    }
+
+
+
+    // Loan EMI status function
+    function lonaEMiStatus() {
+        console.log('User EMi Status History : ', emiStatus)
+        console.log('Repayment success : ', RepaymentEmi)
+        console.log('Repayment Pending : ', RepaymetDueEmi)
+    }
+
+    // user history function
+    function HistoryALL() {
+        console.log('Loan History : ', historyTracking)
+        console.log('EMI Status History : ', emiStatus)
+        console.log('Repayment EMI : ', RepaymentEmi)
+        console.log('Repayment Due : ', RepaymetDueEmi)
+
+    }
+
+    // Return all funnctions
+
+    return {
+        userEligibility,
+        personalLoan,
+        homeLoan,
+        carLoan,
+        prLoanEmiCalculate,
+        carLaonEmiCalculate,
+        homeLoanEMiCalculate,
+        Repayment,
+        lonaEMiStatus,
+        HistoryALL
+
+    };
+}
+
+const user1 = loanSystem('raaz chourasia')
+user1.userEligibility(20, 50000)
+
+
+```
+
+
+
 
 
 
