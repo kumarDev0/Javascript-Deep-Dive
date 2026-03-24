@@ -348,8 +348,148 @@ for (const key of userkey) {
 }
 
 */
+```
 
 ```
+------------------------------------------------
+- ForEach method()
+- Map() function
+- filter() function
+- reduce() function
+- practice code + theory mention in the code
+----------------------------------------------------
+
+```
+```javascript
+// * Map() and filter() and Reduce() in javascript
+
+// ? Case1 for (foreach method) iska kuch bhi return value nhi hota hai
+const months = ['January', 'February', 'March', 'April', 'May']
+/*
+months.forEach((months) => {
+    console.log(months)  // * output = january february march april may
+                         //* retunr value <. undefined
+})
+ */
+// ? case1 for (map() method) iska return value hota hai ,
+// ? yaad rakhna aur ye ek aaray return karta hai Let's see
+
+/*
+months.map((months) => {
+    console.log(months) // * output = january february march april may
+             * return value <. (5) [undefined , undefined ,undefined ,undefined ,undefined]
+
+})
+*/
+// *---------------------------------------
+
+// ? case 2 for foreach method
+/*
+months.forEach((months) => {
+    console.log(months) // * output = january february march april may
+    return months.toUpperCase()  // * Return value <. Undefined
+
+})
+
+*/
+
+// ? case 2 for map() method
+/*
+months.map((months) => {
+    console.log(months) // * output = january february march april may
+    return months.toUpperCase() // * Return value <. (5) ['JANUARY' , 'FEBRUARY', 'MARCH' ,'APRIL' ,'MAY']
+})
+    //* Isi ko kehte hai (non - distructive method) 
+    //* ye hamara main array ko destroy nhi krta hai yani ki change nhi karta hai
+    //* ye new array retun karta hai hum usko store kar skte hai (line-45) below
+*/
+
+
+const capitalMonth = months.map((months) => {
+    // return months.toUpperCase()
+})
+// console.log('Capital Month : ', capitalMonth)
+
+const smallMonth = months.map((months) => {
+    // return months.toLocaleLowerCase()
+})
+// console.log('Small Month : ', smallMonth)
+
+
+
+const storeMonthAndIndex = months.map((months, index) => {
+    // console.log(index, months)
+    // return months
+})
+// console.log(storeMonthAndIndex)
+
+const stor = months.map((months, index, arr) => {
+    // console.log(index, months)
+    // console.log(arr)
+    // return months
+})
+// console.log(arr)
+//* hum map me only 3 parameter dalte hai yadd rakhna is baat ko
+
+
+// ? Filter() method Let's see based on true and false in return 
+
+// * case 1
+const filterMonth = months.filter((months, index) => {
+    // console.log(index, months)
+    // return false   // * Return empty [] array
+    // return true     // * Retrun full array same
+    // return months.length <= 5 // * teturn = ['March' , 'April' , 'May']
+
+})
+// console.log(filterMonth)
+
+// * Question 
+const student = [
+    {
+        name: 'Rakhi',
+        age: 20
+    },
+    {
+        name: 'Rahul',
+        age: 18
+    },
+    {
+        name: 'Raju',
+        age: 22
+    },
+    {
+        name: 'Mausham',
+        age: 23
+
+    },
+    {
+        name: 'Rohan',
+        age: 25
+    },
+    {
+        name: 'Riya',
+        age: 16
+    },
+    {
+        name: 'Nandanee',
+        age: 17
+    }
+
+
+]
+
+// Mujhe wo studet ka list chahiye jiska age 18 se upar ho
+
+const findStudent = student.filter((student) => {
+    return student.age >= 18
+})
+console.log(findStudent)
+
+```
+
+
+
 
 
 
