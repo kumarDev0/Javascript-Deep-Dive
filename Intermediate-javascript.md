@@ -188,10 +188,166 @@ userDetails2()
 // * - Block scope (jisme hamra ) block ke sabhi varible store honge 
 // * - when i try to access global varible inside a function then it is called global access even block level bhi global access ke andar aata hai 
 
+```
+
+```
+-------------------------------------------
+-function vs method
+- function declaration
+- function expression
+- arrow function expression
+- (for of loop) and (for in loop)
+- i am sharing all pracice code
+--------------------------------------------------
+```
+```javascript
+// Practice javascript
+// * Function vs method
+
+// 
+
+/*
+const math = {
+    add: function (a, b) {
+        return a + b
+    },
+
+    sub: function (a, b) {
+        return a - b
+    },
+    square: function (x) {
+        // return x * x
+        return x ** 2
+    },
+
+    // ES6 me new tarika aaya 
+    substract(a, b) {
+        return a - b
+    },
+    cube(num){
+        return num ** 3
+    }
+
+}
+
+console.log(math.add(10, 20))
+console.log(math.sub(20, 30))
+console.log(math.square(10))
+console.log(substract(10, 2)) // error Substract is not define console me aap direct print kr skte ho okay 
+
+
+*/
+
+
+// ? Arrow Function  dekhne se pehle hum 2 function aur dekhnege
+
+// * Function Declaration 
+
+// function cube(num) {
+//     return num ** 3
+// }
+
+// * function Expresssion
+
+// const cube = function (num) {
+//     return num ** 3
+// }
+
+// * Arrow Function Expression
+
+// const cube = (num) => {
+//     return num ** 3
+// }
+
+// * Jab hum Arrow main return nhi krenge fir bhi ye kaam krega kyuki ye implicit return ho rha hai
+
+const cube = (num) => num ** 3 // bilkul easy hai and above function ki tarah same kaam krega 
+
+// * Let's see different different Example
+
+// const sub = (num1, num2) => num1 - num2
+// console.log(sub(10, 20)) // output -10
+
+// const squre = (num3) => num3 * num3
+// console.log(squre(10, 10))
+
+// const add = (a, b) => a + b
+// console.log(add(20, 30))
 
 
 
 
+// ? (For of Loop) and (For in Loop)
+
+// * one think must be remember , array and string are Iterabal object but object is not iterable
+// * what is the normal loop how, they itrate of array Let'look
+
+const fruits = ['Mango', 'graphes', 'guava', 'Apple', 'Orange']
+
+// for (let i = 0; i <= fruits.length - 1; i++) {
+//     console.log(fruits[i])
+// }
+// * i am using (for of loop) for Array 
+/*
+for (const fruit of fruits) {
+    // ? console.log(fruit)
+    console.log('----------------------------')
+    // ? if want to print only orange value from fruits Items then 
+    if (fruit === 'Orange') {
+        console.log(fruit) // only return oranges 
+    }
+
+}
+
+*/
+
+// * i ma using (for of loop) for string
+/* 
+const str = 'Villan raaz'
+for (const it of str) {
+    console.log(it)
+}
+
+*/
+
+// * i ma usnig (for In loop ) for Object 
+const user = {
+    username: 'kumarDev',
+    userpassword: '9877@VK',
+    userAge: 34,
+    userMobileNo: 997565325
+}
+
+//* Access keys and Value , but performace is bad  
+/*
+for (const key in user) {
+     console.log(key) // only return key not value
+    console.log(key, ':', user[key]) // return key and value both 
+}
+
+*/
+
+// * Different Way to best performance
+
+/*
+const userkey = Object.keys(user) // all keys store in userKey varible
+const userValue = Object.values(user) // all value store in uservalue varibel
+
+const userEntities = Object.entries(user) // it return an array in the stroe key and value both
+console.log(userEntities)
+
+for (const key of userkey) {
+     console.log(key) // only key access
+     console.log(user[key]) // only value access of key
+    // ? you can set the condition also
+    if (user[key] === '34') {
+        console.log('userage : ', user[key])
+    }
+
+
+}
+
+*/
 
 ```
 
